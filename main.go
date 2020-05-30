@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	//"gopkg.in/mgo.v2/bson"
 	"github.com/candrea/backend/connection"
+	"github.com/gin-contrib/cors"
 )
 
 var prefixPath = "/api/reciclaje"
@@ -33,6 +34,10 @@ func InsertUserController (c *gin.Context){
 
 func main() {
 	r := gin.Default()
+
+	r.Use(cors.Default())
+
+
 	r.POST("/api/register", InsertUserController)
 	r.Run()
 	
