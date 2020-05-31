@@ -7,11 +7,11 @@ import (
 // Usuario - Model
 type Usuario struct {
 //	ID         bson.ObjectId `bson:"_id" json:"id"`
-	Name      string  `json:"nombre"`
-	Email     string  `json:"email"`
-	Clave     string  `json:"clave"`
-	Rol     string  `json:"rol"`
-	Telefono string `json:"telefono"`
+	Name      string  `bson:"nombre"   json:"nombre"`
+	Email     string `bson:"email" json:"email"`
+	Clave     string  `bson:"clave" json:"clave"`
+	Rol     string  `bson:"rol" json:"rol"`
+	Telefono string `bson:"telefono" bson:"telefono"`
 }
 
 type Reciclaje struct {

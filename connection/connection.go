@@ -13,6 +13,7 @@ import (
 type Connection interface {
 	ExecuteConnection() *mongo.Client
 	InsertUser(model.Usuario) error
+	Login(string, string)
 }	
 
 
@@ -53,6 +54,7 @@ func ExecuteConnection() *mongo.Client {
 	func Login (correo string, clave string) {
 		//client := ExecuteConnection()
 		//collection := client.Database("reciclaje").Collection("usuarios")
+
 
 
 	}
