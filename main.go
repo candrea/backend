@@ -14,6 +14,7 @@ import (
 var prefixPath = "/api/reciclaje"
 
 func InsertUserController (c *gin.Context){
+	
 	var usuario model.Usuario
 	err := c.BindJSON(&usuario)
 	if err != nil {
@@ -23,10 +24,10 @@ func InsertUserController (c *gin.Context){
 	//usuario.ID = bson.NewObjectId() 
 	if err := connection.InsertUser(usuario);
 	 err != nil {
-	//respondWithError(w, http.StatusInternalServerError, err.Error())
+	
 		return
 	}
-	//respondWithJSON(w, http.StatusCreated, usuario)
+	
 }
 
 

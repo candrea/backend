@@ -50,6 +50,12 @@ func ExecuteConnection() *mongo.Client {
 	 fmt.Println(good)
 	 return nil
 	}
+	func Login (correo string, clave string) {
+		//client := ExecuteConnection()
+		//collection := client.Database("reciclaje").Collection("usuarios")
+
+
+	}
 		
 
 //}

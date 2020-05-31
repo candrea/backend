@@ -1,10 +1,8 @@
 {
-    "ImportPath":"",
+    "ImportPath":"reciclaje",
     "GoVersion":"go1.5",
     "GodepVersion":"v74",
     "Packages":["github.com/gin-gonic/gin","github.com/candrea/backend/model","github.com/candrea/backend/connection"],
-
-
     "Deps":[
         {
 			"ImportPath": "go.mongodb.org/mongo-driver/mongo",
