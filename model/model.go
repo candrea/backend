@@ -16,11 +16,12 @@ type Usuario struct {
 
 type Reciclaje struct {
 	//	ID         bson.ObjectId `bson:"_id" json:"id"`
-		Tipo      string  `json:"tipo"`
-		User_id     string  `json:"user_id"`
-		Latitud    string  `json:"latitud"`
-		Longitud     string  `json:"longitud"`
-		Fecha string `json:"fecha"`
+	    Email     string  `bson:"email" json:"email"`
+		Tipo      string  `bson:"tipo" json:"tipo"`
+		User_id     string  `bson:"user_id" json:"user_id"`
+		Latitud    string  `bson:"latitud" json:"latitud"`
+		Longitud     string  `bson:"longitud" json:"longitud"`
+		Fecha string `bson:"fecha" json:"fecha"`
 	}
 
 //  - for request

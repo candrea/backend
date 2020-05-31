@@ -31,6 +31,52 @@ func InsertUserController (c *gin.Context){
 }
 
 
+func LoginUserController (c *gin.Context){
+	
+	var usuario model.Usuario
+	err := c.BindJSON(&usuario)
+	if err != nil {
+		c.Status(http.StatusBadRequest)
+	}
+	fmt.Println(usuario)
+	 usuario = connection.LoginUser(usuario);
+	c.JSON(http.StatusOK, gin.H{"responseContent": usuario})
+	
+}
+
+func InsertRecycleController (c *gin.Context){
+	
+	var reciclaje model.Reciclaje
+	err := c.BindJSON(&reciclaje)
+	if err != nil {
+		c.Status(http.StatusBadRequest)
+	}
+	fmt.Println(reciclaje)
+	//usuario.ID = bson.NewObjectId() 
+	if err := connection.InsertRecycle(reciclaje);
+	 err != nil {
+	
+		return
+	}
+	
+}
+
+func RecycleController (c *gin.Context) {
+		
+	//usuario.ID = bson.NewObjectId() 
+	 
+	 
+	
+	//usuario.ID = bson.NewObjectId() 
+	if err := connection.Recycle();
+	 err != nil {
+	
+		return
+	}
+	
+	
+}
+
 
 
 func main() {
@@ -40,6 +86,9 @@ func main() {
 
 
 	r.POST("/api/register", InsertUserController)
+	r.POST("/api/recycle", InsertRecycleController)
+	r.GET("/api/recycling", RecycleController)
+	r.POST("/api/login",LoginUserController)
 	r.Run()
 	
 }
